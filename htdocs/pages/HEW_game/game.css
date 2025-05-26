@@ -1,0 +1,338 @@
+@font-face {
+    font-family: "DotGothic";
+    src: url("../../assets/font/DotGothic16-Regular.ttf") format("truetype");
+}
+
+html {
+    font-family: "DotGothic";
+}
+
+body {
+    font-family: "DotGothic";
+    text-align: center;
+    background-color: #f4f4f4;
+    background-image: url('../../assets/img/game/game_background.jpg'); /* 画像のパスを指定 */
+    background-size: cover; /* 背景が画面いっぱいに広がる */
+    background-position: center; /* 画像を中央に配置 */
+    background-repeat: no-repeat; /* 繰り返さない */
+    background-attachment: fixed; /* 背景を固定する */
+
+}
+
+
+img {
+    pointer-events: none;
+}
+
+.container {
+    margin: 0px 255px;
+}
+
+.status-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.player-status, .enemy-status {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.health-bar {
+    width: 100px;
+    height: 20px;
+    background-color: #ddd;
+    margin: 10px auto;
+    position: relative;
+}
+
+#player-hp-bar, #enemy-hp-bar {
+    height: 100%;
+    background-color: #4caf50;
+}
+
+@keyframes shake {
+    0% { transform: translate(0); }
+    25% { transform: translate(-5px, 0); }
+    50% { transform: translate(5px, 0); }
+    75% { transform: translate(-5px, 0); }
+    100% { transform: translate(0); }
+}
+
+.character-image {
+    width: 180px; /* キャラ画像の幅 */
+    height: auto; /* 高さは自動調整 */
+}
+
+/* 震えるクラス */
+.shake {
+    animation: shake 0.3s; /* 震えるアニメーションの設定 */
+}
+
+
+.health-bar {
+    width: 150px;
+    height: 25px;
+    background-color: #ddd;
+    border: 1px solid #333;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.health-bar div {
+    height: 100%;
+    background-color: #4caf50;
+    width: 100%;
+}
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, border 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* 立体感を持たせるシャドウ */
+}
+
+.attack-button {
+    background-color: red;
+    border: 2px solid black;
+}
+
+.counter-button {
+    background-color: blue;
+    border: 2px solid black;
+}
+
+.meditate-button {
+    background-color: rgb(36, 238, 36);
+    border: 2px solid black;
+}
+
+/* ホバー時の効果 */
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-3px); /* ボタンを上に移動 */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); /* ホバー時のシャドウを強く */
+}
+
+button:active {
+    transform: translateY(1px); /* 押下時の移動 */
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); /* 押下時のシャドウを弱く */
+}
+
+
+#log {
+    background-color: rgba(0, 0, 0, 0.7); /* 黒色の半透明 */
+    color: white; /* テキストを白色にして読みやすくする */
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 400px; /* テキストボックスの最大幅を設定 */
+    min-height: 50px; /* テキストがない場合でも高さを確保 */
+    margin: 20px auto;
+    text-align: center;
+    display: flex;
+    align-items: center; /* テキストを縦方向に中央揃え */
+    justify-content: center; /* テキストを横方向に中央揃え */
+    width: 400px;
+}
+
+/* 瞑想中のキャラクターに与えるエフェクト */
+@keyframes glow {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+}
+
+.glow {
+    animation: glow 1.5s infinite alternate;
+}
+
+/* 瞑想時のエフェクト */
+@keyframes glowEffect {
+    0% {
+        background-color: rgba(0, 128, 0, 0.3); /* 緑の透過色 */
+        transform: scale(1);
+    }
+    50% {
+        background-color: rgba(0, 255, 0, 0.6); /* 明るい緑 */
+        transform: scale(1.05); /* わずかに拡大 */
+    }
+    100% {
+        background-color: rgba(0, 128, 0, 0.3);
+        transform: scale(1);
+    }
+}
+
+.glowEffect {
+    animation: glowEffect 1.5s infinite alternate;
+}
+
+.turn-counter {
+    text-align: center;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 200px;
+    margin: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#turn-number {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+/* インフォメーションアイコンのスタイル */
+.info-icon-container {
+    position: absolute;
+    top: 80px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.info-icon {
+    font-size: 35px;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    color: #333;
+}
+
+/* ツールチップのスタイル */
+.tooltip {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.tooltip p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.tooltip ul {
+    margin: 5px 0 0;
+    padding: 0;
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+.tooltip ul li {
+    font-size: 14px;
+}
+
+/* ツールチップ表示時 */
+.info-icon-container:hover .tooltip {
+    display: block;
+}
+
+/* スマートフォンのためのレスポンシブ設定 */
+@media (max-width: 768px) {
+    .container {
+        margin: 0 20px; /* 画面端に近づきすぎないように調整 */
+    }
+
+    .status-container {
+        flex-direction: column; /* プレイヤーと敵の情報を縦並びに */
+        align-items: center;
+    }
+
+    .player-status, .enemy-status {
+        width: 100%; /* 画面幅に合わせて広げる */
+        margin-bottom: 20px; /* 隙間を空ける */
+    }
+
+    .health-bar {
+        width: 80%; /* ヘルスバーを幅を縮小 */
+    }
+
+    .character-image {
+        width: 150px; /* キャラクター画像を縮小 */
+    }
+
+    /* 戦闘ボタン */
+    .commands {
+        display: flex;
+        flex-direction: column;
+        gap: 10px; /* ボタン同士の隙間 */
+    }
+
+    .commands button {
+        width: 100%; /* ボタンを画面いっぱいに広げる */
+        font-size: 14px; /* フォントサイズを少し小さく */
+    }
+
+    .turn-counter {
+        width: 80%; /* ターンカウンターの幅を調整 */
+        margin: 20px auto; /* 中央揃え */
+    }
+
+    #log {
+        max-width: 90%; /* ログの最大幅を調整 */
+        margin: 20px auto;
+    }
+
+    /* インフォメーションアイコン */
+    .info-icon-container {
+        top: 20px; /* 上部の間隔を狭く */
+        right: 10px;
+    }
+
+    .tooltip {
+        width: 90%; /* ツールチップを画面幅に合わせて広げる */
+    }
+}
+
+/* タブレット向けレスポンシブ設定 */
+@media (max-width: 1024px) {
+    .container {
+        margin: 0 50px; /* 少し広めに調整 */
+    }
+
+    .status-container {
+        flex-direction: row; /* 横並びに戻す */
+        justify-content: space-between; /* 両端に配置 */
+    }
+
+    .commands {
+        flex-direction: row; /* ボタンを横並びに */
+        justify-content: space-between;
+    }
+
+    .commands button {
+        width: 30%; /* ボタンを横に並べるため、幅を調整 */
+    }
+
+    .health-bar {
+        width: 100px; /* ヘルスバーの幅を調整 */
+    }
+
+    .character-image {
+        width: 170px; /* 画像の大きさを調整 */
+    }
+}
