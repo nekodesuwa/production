@@ -1,0 +1,128 @@
+@font-face {
+    font-family: "DotGothic";
+    src: url("../../assets/font/DotGothic16-Regular.ttf") format("truetype");
+}
+
+/* 入力ページ用スタイル */
+#contact-form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-width: 90%;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+
+#contact-form h1 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+#contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form select,
+#contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+#contact-form textarea {
+    resize: none;
+    height: 100px;
+}
+
+#contact-form button.blue-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+#contact-form button.blue-button:hover {
+    background-color: #0056b3;
+}
+
+#contact-form button.blue-button:active {
+    background-color: #004080;
+}
+
+
+/* ページ全体を中央揃え */
+.central-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    margin: 0;
+}
+
+#confirmation-page {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-width: 90%;
+    font-family: Arial, sans-serif;
+}
+
+
+#confirmation-page h1 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+#confirmation-page p {
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #555;
+}
+
+#confirmation-page .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#confirmation-page .button-container button {
+    flex: 1;
+    margin: 0 5px;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: #007BFF;
+}
+
+#confirmation-page .button-container button:hover {
+    background-color: #0056b3;
+}
+
+#confirmation-page .button-container button:active {
+    background-color: #004080;
+}

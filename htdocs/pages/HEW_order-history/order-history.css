@@ -1,0 +1,149 @@
+@font-face {
+    font-family: "DotGothic";
+    src: url("../../assets/font/DotGothic16-Regular.ttf") format("truetype");
+}
+
+body {
+    min-width: 600px;
+}
+
+/* 注文履歴セクション */
+.order-history-section {
+    min-width: 600px;
+    width: 80%;
+    margin: 20px auto;
+    padding: 50px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.order-history-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.order-history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.order-item-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.product-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.item-name {
+    max-width: 500px;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 25px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.order-item-right {
+    text-align: right;
+}
+
+.item-price {
+    font-size: 20px;
+    color: #1E90FF;
+}
+
+.order-date {
+    font-size: 16px;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .order-history-section {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .order-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .order-item-right {
+        margin-top: 10px;
+        text-align: left;
+    }
+}
+
+/* 注文番号ブロック */
+.order-block {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}
+
+.order-number {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* 注文履歴セクション（他はそのまま） */
+.order-history-section {
+    width: 80%;
+    margin: 20px auto;
+    padding: 50px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.order-history-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.order-history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 合計金額のスタイリング */
+.order-total-amount {
+    font-size: 18px; /* 文字サイズを大きく */
+    font-weight: bold; /* 太字にする */
+    color: #1e88e5; /* 鮮やかな青色 */
+    margin-top: 10px; /* 上に少し余白を追加 */
+    padding: 10px; /* 内側の余白を追加 */
+    background-color: #e3f2fd; /* 背景色を淡い青に */
+    border: 1px solid #42a5f5; /* 枠線をやや濃い青色に */
+    border-radius: 5px; /* 角を丸く */
+    text-align: right; /* 右寄せで表示 */
+}

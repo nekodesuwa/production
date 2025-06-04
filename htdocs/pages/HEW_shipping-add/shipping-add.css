@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    min-width: 700px;
+}
+
+.back-button {
+    display: block;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: #333;
+    border: solid 1px #ccc;
+    border-radius: 10px;
+}
+
+.back-button-link {
+    text-decoration: none;
+}
+
+.back-button:hover {
+    background-color: #ddd;
+}
+
+.container {
+    min-width: 600px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.container-area {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    color: #333;
+}
+
+.container-area form > div {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-area label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.container-area input[type="text"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+h2 {
+    font-size: 1.4rem;
+    color: #444;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.add-button {
+    display: flex;
+    justify-content: flex-end;
+    }
+
+.add-button button {
+    padding: 10px 20px;
+    margin-top: 20px;
+
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+
+.add-button button:hover {
+    background-color: #0056b3;
+}

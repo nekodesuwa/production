@@ -1,0 +1,294 @@
+body {
+    min-width: 760px;
+}
+
+/* 全体のレイアウト設定 */
+.main-area,
+.info-area {
+    margin: 0 70px;
+}
+
+/* 商品画像とカートボタンの配置 */
+.main-area {
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+.container {
+    width: 100%;
+}
+
+/* 商品詳細エリア */
+.content-text {
+    padding-left: 50px;
+}
+
+.content-text-body {
+    margin-bottom: 60px;
+}
+
+/* 商品スライダーの設定 */
+#image-slider {
+    width: 450px;
+    height: 450px;
+}
+
+.splide__slide img {
+    text-align: center;
+    width: 100%;
+    height: auto;
+    min-width: 450px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+/* スライダーの矢印 */
+.splide__arrow {
+    background-color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+    opacity: 0.8;
+}
+
+.splide__arrow svg {
+    fill: rgb(78, 78, 78);
+}
+
+/* ページネーション */
+.splide__pagination {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    bottom: -2em;
+    margin-top: 10px;
+}
+
+.splide__pagination__page {
+    width: 12px;
+    height: 12px;
+    background-color: gray;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+}
+
+.splide__pagination__page::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    width: 24px;
+    height: 24px;
+    border: 2px solid lightgray;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: border-color 0.3s ease;
+}
+
+.splide__pagination__page.is-active {
+    background-color: black;
+}
+
+.splide__pagination__page.is-active::before {
+    border-color: black;
+}
+
+/* スライダーの右 */
+.title {
+    width: fit-content;
+    font-size: 25px;
+    font-weight: normal;
+    border-left: #333 5px solid;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+
+.price {
+    color: #ba4f53;
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.shipping {
+    color: #4470a1;
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.item-select {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    margin-bottom: 20px;
+}
+
+/* 数量選択 */
+.item-select {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.item-select::before,
+.item-select::after {
+    position: absolute;
+    content: '';
+    pointer-events: none;
+}
+
+.item-select::before {
+    display: inline-block;
+    right: 0;
+    width: 2.8em;
+    height: 2.8em;
+    border-radius: 0 3px 3px 0;
+    background-color: #d02525;
+}
+
+.item-select::after {
+    position: absolute;
+    top: 50%;
+    right: 1.4em;
+    transform: translate(50%, -50%) rotate(45deg);
+    width: 6px;
+    height: 6px;
+    border-bottom: 3px solid #fff;
+    border-right: 3px solid #fff;
+}
+
+.item-select select {
+    appearance: none;
+    min-width: 230px;
+    height: 2.8em;
+    padding: .4em 3.6em .4em .8em;
+    border: none;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    color: #333;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.item-select select:focus {
+    outline: 2px solid #d02525;
+}
+
+/* カートボタン */
+.wishlist-button {
+    width: 40px;
+    height: 40px;
+}
+
+.cart-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 230px;
+    border-radius: 5px;
+    background-color: #007BFF;
+    padding: 10px;
+    margin-right: 10px;
+    color: #fff;
+    border: none;
+}
+
+.cart-button img {
+    width: 30px;
+}
+
+.cart-star-button {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.cart-button:hover {
+    background-color: #0056b3;
+}
+
+
+.info {
+    max-width: 500px;
+}
+
+/* おすすめの商品 */
+.product-section {
+    margin: 0 auto;
+}
+
+.product-section h2 {
+    text-align: center;
+    margin: 40px 0;
+}
+
+/* 商品カード */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 0 10px;
+    width: 200px;
+}
+
+.product-image {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.product-card .price {
+    color: #ba4f53;
+    font-size: 22px;
+}
+
+.product-card .cart-button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+.info-area .product-card a {
+    text-decoration: none;
+}
+
+.info-area .product-card a h3 {
+    font-size: 14px;
+    color: #333;
+    margin: 10px 0;
+    text-decoration: none;
+}
+
+.info-area .product-card a .price {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #e60012;
+    margin: 5px 0;
+    text-decoration: none;
+}
+
+.info-area .product-card a:hover .product-image {
+    transform: scale(1.05);
+}

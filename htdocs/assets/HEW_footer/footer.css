@@ -1,0 +1,80 @@
+@font-face {
+    font-family: "DotGothic";
+    src: url("../font/DotGothic16-Regular.ttf") format("truetype");
+}
+
+/* フッターを常に下部に固定 */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* フッターの固定用 */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* フッターのスタイル */
+.site-footer {
+    background-color: navajowhite;
+    padding: 3px 10px;
+    color: #333;
+    text-align: center;
+    font-size: 14px;
+    border-top: 2px solid #ffeacb;
+    width: 100%; /* 横幅いっぱいにする */
+    margin-top: auto;
+}
+
+.site-footer .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.site-footer .footer-logo img {
+    max-width: 100px;
+    height: auto;
+    margin-top: 5px;
+    pointer-events: none;
+}
+
+.site-footer .footer-info p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* 一番上に戻るボタン */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: -60px;
+    background-color: navajowhite;
+    color: #333;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0; /* 初期状態は非表示 */
+    transition: right 0.5s ease, opacity 0.5s ease;
+    font-family: "DotGothic";
+}
+
+.back-to-top.visible {
+    right: 20px;
+    opacity: 1; /* 表示 */
+}
+
+.back-to-top:hover {
+    background-color: #ffc069;
+    transform: scale(1.1);
+    transition: background-color 0.3s, transform 0.3s;
+}

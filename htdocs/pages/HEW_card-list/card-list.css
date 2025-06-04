@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-width: 480px;
+}
+
+.back-button {
+    display: block;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: #333;
+    border: solid 1px #ccc;
+    border-radius: 10px;
+}
+
+.back-button-link {
+    text-decoration: none;
+}
+
+.back-button:hover {
+    background-color: #ddd;
+}
+
+.container {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 10px 0;
+    border-bottom: #555 2px solid;
+}
+
+.container-area {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    color: #333;
+}
+
+.card-area {
+    border: 1px solid #ececec;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fafafa;
+    position: relative;
+}
+
+.card-area button {
+    position: absolute;
+    top: 15px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.card-area button a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.edit-button {
+    right: 90px;
+    background-color: #3788df;
+}
+
+.edit-button:hover {
+    background-color: #0056b3;
+}
+
+.delete-button {
+    right: 15px;
+    background-color: #eb2c2c;
+}
+
+.delete-button:hover {
+    background-color: #b70a0a;
+}
+
+
+.card-number,
+.card-name,
+.card-month-year {
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+p {
+    margin: 0;
+    font-size: 15px;
+}
+
+p span {
+    font-weight: bold;
+    color: #000;
+}
+
+.add-button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #07c807;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    background-color: #10981d;
+}

@@ -1,0 +1,333 @@
+@font-face {
+    font-family: "DotGothic";
+    src: url("../../assets/font/DotGothic16-Regular.ttf") format("truetype");
+}
+
+html {
+    font-family: "DotGothic";
+}
+
+body {
+    font-family: "DotGothic";
+    text-align: center;
+    background-color: #f4f4f4;
+    background-image: url('../../assets/img/game/game_background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+
+img {
+    pointer-events: none;
+}
+
+.container {
+    margin: 0px 255px;
+}
+
+.status-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.player-status, .enemy-status {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.health-bar {
+    width: 100px;
+    height: 20px;
+    background-color: #ddd;
+    margin: 10px auto;
+    position: relative;
+}
+
+#player-hp-bar, #enemy-hp-bar {
+    height: 100%;
+    background-color: #4caf50;
+}
+
+@keyframes shake {
+    0% { transform: translate(0); }
+    25% { transform: translate(-5px, 0); }
+    50% { transform: translate(5px, 0); }
+    75% { transform: translate(-5px, 0); }
+    100% { transform: translate(0); }
+}
+
+.character-image {
+    width: 180px;
+    height: auto;
+}
+
+/* 震えるアニメーションの設定 */
+.shake {
+    animation: shake 0.3s;
+}
+
+
+.health-bar {
+    width: 150px;
+    height: 25px;
+    background-color: #ddd;
+    border: 1px solid #333;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.health-bar div {
+    height: 100%;
+    background-color: #4caf50;
+    width: 100%;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, border 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.attack-button {
+    background-color: red;
+    border: 2px solid black;
+}
+
+.counter-button {
+    background-color: blue;
+    border: 2px solid black;
+}
+
+.meditate-button {
+    background-color: rgb(36, 238, 36);
+    border: 2px solid black;
+}
+
+
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+#log {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 400px;
+    min-height: 50px;
+    margin: 20px auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+}
+
+@keyframes glow {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+}
+
+.glow {
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glowEffect {
+    0% {
+        background-color: rgba(0, 128, 0, 0.3);
+        transform: scale(1);
+    }
+    50% {
+        background-color: rgba(0, 255, 0, 0.6);
+        transform: scale(1.05);
+    }
+    100% {
+        background-color: rgba(0, 128, 0, 0.3);
+        transform: scale(1);
+    }
+}
+
+.glowEffect {
+    animation: glowEffect 1.5s infinite alternate;
+}
+
+.turn-counter {
+    text-align: center;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 200px;
+    margin: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#turn-number {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+/* インフォメーションアイコン */
+.info-icon-container {
+    position: absolute;
+    top: 80px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.info-icon {
+    font-size: 35px;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    color: #333;
+}
+
+/* ツールチップ */
+.tooltip {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.tooltip p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.tooltip ul {
+    margin: 5px 0 0;
+    padding: 0;
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+.tooltip ul li {
+    font-size: 14px;
+}
+
+/* ツールチップ表示時 */
+.info-icon-container:hover .tooltip {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 0 20px;
+    }
+
+    .status-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .player-status, .enemy-status {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .health-bar {
+        width: 80%;
+    }
+
+    .character-image {
+        width: 150px;
+    }
+
+    .commands {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .commands button {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .turn-counter {
+        width: 80%;
+        margin: 20px auto;
+    }
+
+    #log {
+        max-width: 90%;
+        margin: 20px auto;
+    }
+
+    .info-icon-container {
+        top: 20px;
+        right: 10px;
+    }
+
+    .tooltip {
+        width: 90%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        margin: 0 50px;
+    }
+
+    .status-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .commands {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .commands button {
+        width: 30%;
+    }
+
+    .health-bar {
+        width: 100px;
+    }
+
+    .character-image {
+        width: 170px;
+    }
+}

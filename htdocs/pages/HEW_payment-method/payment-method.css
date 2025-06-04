@@ -1,0 +1,206 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    min-width: 650px;
+}
+
+button {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+}
+
+.back-button {
+    display: block;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: #333;
+    border: solid 1px #ccc;
+    border-radius: 10px;
+}
+
+.back-button-link {
+    text-decoration: none;
+}
+
+.back-button:hover {
+    background-color: #ddd;
+}
+.contents-area {
+    max-width: 700px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.payment-container {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.paymentimg {
+    height: 30px;
+    padding-left: 20px;
+    text-align: center;
+}
+
+/* アコーディオンスタイル */
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.accordion-item {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.accordion-radio {
+    display: none;
+}
+
+.accordion-button {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    font-size: 1.2em;
+    background-color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.accordion-button:hover {
+    background-color: #eee;
+}
+
+.radio-visible {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border: 2px solid #1E90FF;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.accordion-radio:checked + .accordion-button .radio-visible {
+    background-color: #1E90FF;
+}
+
+.accordion-content {
+    display: none;
+    padding: 20px;
+    font-size: 1.1em;
+    background-color: #fdfdfd;
+}
+
+.accordion-radio:checked ~ .accordion-content {
+    display: block;
+}
+
+.accordion-content input[type="text"],
+.accordion-content input[type="date"],
+.accordion-content select {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1em;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.accordion-content button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.accordion-content button:hover {
+    background-color: #218838;
+}
+
+.card-register-area {
+    margin-top: 10px;
+}
+.card-register-button {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+}
+.card-register-button:hover {
+    background-color: #0056b3;
+}
+
+.point-area {
+    padding: 30px 0;
+    font-size: 18px;
+}
+
+.point-radio {
+    transform: scale(1.5);
+}
+
+
+.next-button {
+    border: 0;
+    border-radius: 5px;
+    background-color: #007bff;
+    margin: 0 0 20px auto;
+    padding: 10px 20px;
+}
+
+.next-button:hover {
+    background-color: #0056b3;
+}
+
+.next-button a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* 無効化されてるときボタン */
+button:disabled, .disabled-button {
+    background-color: #ccc !important;
+    color: #666 !important;
+    cursor: not-allowed !important;
+    pointer-events: none !important;
+    opacity: 0.6 !important;
+    border: 1px solid #aaa;
+}
+
+/* 有効になった時のボタン */
+.active-button {
+    background-color: #007bff !important;
+    color: white !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    opacity: 1 !important;
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+.active-button:hover {
+    background-color: #0056b3 !important;
+}
