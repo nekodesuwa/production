@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors', 0);
+
 session_start();
 
 // すでにログインしている場合はマイページへリダイレクト
@@ -15,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $inputPassword = $_POST['password'] ?? '';
 
     if (empty($inputUsername) || empty($inputPassword)) {
-        $error = "ユーザー名とパスワードを入力してください。";
+        $error = "メールアドレスまたはユーザー名とパスワードを入力してください。";
     } else {
         $databasePath = "C:/xampp/htdocs/database/AccessDB.accdb";
         if (!file_exists($databasePath)) {
@@ -28,28 +30,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // ユーザー情報の取得
-            $sql = "SELECT user_id, username, password FROM user_account WHERE username = ?";
+            $sql = "SELECT user_id, username, email, password FROM user_account WHERE username = ? OR email = ?";
             $stmt = $pdo->prepare($sql);
-            $stmt->execute([$inputUsername]);
+            $stmt->execute([$inputUsername, $inputUsername]);
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if ($user) {
-                // 取得したデータを Shift_JIS → UTF-8 に変換
                 $dbUsername = mb_convert_encoding($user['username'], "UTF-8", "SJIS");
+                $dbEmail = mb_convert_encoding($user['email'], "UTF-8", "SJIS");
                 $dbPasswordHash = $user['password'];
 
-                if ($inputUsername === $dbUsername && password_verify($inputPassword, $dbPasswordHash)) {
-                    // ログイン成功でセッションにユーザーIDを保存
+                if (($inputUsername === $dbUsername || $inputUsername === $dbEmail) && password_verify($inputPassword, $dbPasswordHash)) {
                     $_SESSION['user_id'] = $user['user_id'];
-
-                    // ログイン後はマイページへリダイレクト
                     header('Location: ../HEW_mypage/mypage.php');
                     exit;
                 } else {
-                    $error = "ユーザー名またはパスワードが正しくありません。";
+                    $error = "メールアドレスかユーザー名、またはパスワードが正しくありません。";
                 }
             } else {
-                $error = "ユーザー名またはパスワードが正しくありません。";
+                $error = "メールアドレスかユーザー名、またはパスワードが正しくありません。";
             }
         } catch (PDOException $e) {
             die("データベースエラー: " . $e->getMessage());
@@ -77,9 +76,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php if (!empty($error)): ?>
         <p class="error-message"><?php echo htmlspecialchars($error); ?></p>
     <?php endif; ?>
-	<form method="POST" action="login.php" id="loginForm">
+    <form method="POST" action="login.php" id="loginForm">
         <div class="form-group">
-            <label for="username">ユーザー名</label>
+            <label for="username">メールアドレスまたはユーザー名</label>
             <input type="text" id="username" name="username" required>
         </div>
         <div class="form-group">
